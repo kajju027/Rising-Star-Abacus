@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rising Star Tech | Advanced Computer Learning</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <style>
+        /* [Existing styles for file-input-grid] */
+        .file-input-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+            gap: 15px; 
+            margin-top: 20px;
+        }
+        input[type="file"] {
+            border: none;
+            padding: 8px;
+            background: rgba(0,0,0,0.2);
+            font-size: 0.9rem;
+        }
+        @media (max-width: 600px) {
+            .file-input-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav><div class="logo">R-STAR TECH</div></nav>
+
+    <header id="home">
+        <h1>Future-Proof <br>Digital Education</h1>
+        <p>Master the latest technology with our industry-focused and AI-integrated courses. Your future starts now.</p>
+        <a href="#admission" class="btn btn-primary">Enroll Now</a>
+        <a href="/admin-data.html" style="position: absolute; bottom: 10px; right: 10px; color: transparent; font-size: 0.1px;">Admin Access</a>
+    </header>
+
+    <section id="courses">
+        <div class="section-title"><span>OUR ACCREDITED PROGRAMS</span><h2>Advanced Learning Paths</h2></div>
+        <div class="grid">
+            <div class="card"><i class="fas fa-microchip"></i><h3>ADIT + AI (Advanced Diploma)</h3><p>Advanced Diploma in IT with specialized modules in Artificial Intelligence and Machine Learning.</p></div>
+            <div class="card"><i class="fas fa-book"></i><h3>ADIT (Advanced Diploma in IT)</h3><p>Comprehensive program covering Programming, Networking, and Database Management.</p></div>
+            <div class="card"><i class="fas fa-receipt"></i><h3>Tally Prime (Accounting Expert)</h3><p>Master financial accounting, GST, Inventory Management, and advanced Tally Prime operations.</p></div>
+            <div class="card"><i class="fas fa-file-alt"></i><h3>DT (Diploma in Technology)</h3><p>Foundation course in core technology concepts, hardware, software, and troubleshooting.</p></div>
+            <div class="card"><i class="fas fa-code"></i><h3>Web Development</h3><p>Full-stack training: HTML, CSS, JS, and React.</p></div>
+            <div class="card"><i class="fas fa-laptop"></i><h3>DITA (Basic)</h3><p>Office Automation, Internet & Operating Systems fundamentals.</p></div>
+        </div>
+    </section>
+
+    <section id="admission">
+        <div class="section-title"><span>ADMISSION OPEN</span><h2>Registration Form</h2></div>
+        <div class="form-container">
+            
+            <form name="detailed-admission" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" id="admissionForm">
+                <input type="hidden" name="form-name" value="detailed-admission">
+                
+                <div class="input-grid">
+                    <div class="form-group"><label>Select Course *</label>
+                        <select name="course" required>
+                            <option value="">Choose Course</option>
+                            <option value="ADIT + AI">ADIT + AI (Advanced Diploma)</option>
+                            <option value="ADIT">ADIT (Advanced Diploma in IT)</option>
+                            <option value="Tally Prime">Tally Prime (Accounting Expert)</option>
+                            <option value="DT">DT (Diploma in Technology)</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="DITA (Basic)">DITA (Basic)</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label>Student Name *</label><input type="text" name="student_name" required placeholder="Enter full name"></div>
+                    <div class="form-group"><label>Date of Birth *</label><input type="date" name="dob" required></div>
+                    
+                    <div class="form-group"><label>Father's Name *</label><input type="text" name="father_name" required></div>
+                    <div class="form-group"><label>Father's Occupation</label><input type="text" name="father_occupation"></div>
+                    
+                    <div class="form-group"><label>Mother's Name *</label><input type="text" name="mother_name" required></div>
+                    <div class="form-group"><label>Mother's Occupation</label><input type="text" name="mother_occupation"></div>
+                    
+                    <div class="form-group">
+                        <label>Gender *</label>
+                        <select name="gender" required>
+                            <option value="">Select</option><option>Male</option><option>Female</option><option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Category *</label>
+                        <select name="category" required>
+                            <option value="">Select</option><option>General</option><option>OBC</option><option>SC</option><option>ST</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group"><label>ID Proof Type *</label><input type="text" name="id_proof_type" placeholder="Aadhar / Birth Certificate" required></div>
+                    <div class="form-group"><label>ID Proof Number *</label><input type="text" name="id_proof_number" required></div>
+                    
+                    <div class="form-group"><label>Mobile No *</label><input type="tel" name="mobile" required></div>
+                    <div class="form-group"><label>WhatsApp No *</label><input type="tel" name="whatsapp" required></div>
+                    
+                    <div class="form-group full" style="margin-top: 15px;"><h3 style="color:var(--primary); font-size:1.2rem;">Residential Address Details</h3></div>
+
+                    <div class="form-group"><label>Village *</label><input type="text" name="village" required></div>
+                    <div class="form-group"><label>Post Office *</label><input type="text" name="post_office" required></div>
+                    
+                    <div class="form-group"><label>P.S. *</label><input type="text" name="police_station" required></div>
+                    <div class="form-group"><label>District *</label><input type="text" name="district" required></div>
+
+                    <div class="form-group"><label>State *</label><input type="text" name="state" required></div>
+                    <div class="form-group"><label>Pin Code *</label><input type="text" name="pin" required></div>
+                    
+                    <div class="form-group full" style="margin-top: 15px;"><label>Email ID (if any)</label><input type="email" name="email"></div>
+                </div>
+                
+                <div class="file-input-grid">
+                    <div class="form-group">
+                        <label>Student Photo</label>
+                        <input type="file" name="student_photo" accept="image/*" id="student_photo"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Guardian's Signature</label>
+                        <input type="file" name="guardian_signature" accept="image/*" id="guardian_signature"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Guardian's ID</label>
+                        <input type="file" name="guardian_id" accept="image/*" id="guardian_id"/>
+                    </div>
+                </div>
+                <p id="fileSizeWarning" style="color: #f87171; margin-top: 10px; display: none;">Warning: Total file size must be under 10MB.</p>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">SUBMIT APPLICATION</button>
+            </form>
+        </div>
+    </section>
+
+    <footer><div style="text-align: center; padding: 2rem; border-top: 1px solid var(--border); margin-top: 3rem; color: #64748b;"><p>&copy; 2026 Rising Star Tech Academy • All Right Received</p></div></footer>
+
+    <div id="successModal">
+        <i class="fas fa-check-circle check-icon"></i>
+        <h2 style="margin-bottom: 10px;">Application Received!</h2>
+        <p style="color: #cbd5e1; margin-bottom: 20px;">We will contact you shortly.</p>
+        <button onclick="window.location.reload()" class="btn btn-primary">Close</button>
+    </div>
+
+    <script src="script.js"></script> 
+    </body>
+</html>
